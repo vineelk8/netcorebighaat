@@ -148,6 +148,10 @@ android {
     }
 }
 
+repositories {
+    maven { url 'https://artifacts.netcore.co.in/artifactory/android' }
+}
+
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
@@ -165,6 +169,13 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation 'com.netcore.android:smartech-sdk:3.2.37'
+    api "com.netcore.android:smartech-sdk:${SMARTECH_BASE_SDK_VERSION}"
+    implementation 'com.netcore.android:smartech-nudges:9.0.7'
+    implementation 'androidx.work:work-runtime:2.8.1'
+    implementation 'androidx.work:work-runtime-ktx:2.8.1'
+
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

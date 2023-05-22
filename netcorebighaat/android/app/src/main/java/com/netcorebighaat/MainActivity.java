@@ -6,6 +6,8 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactActivityDelegate;
 import android.os.Bundle;
 
+import io.hansel.hanselsdk.Hansel;
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -20,6 +22,7 @@ public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(null);
+    Hansel.pairTestDevice(getIntent().getDataString());
   }
 
   /**
